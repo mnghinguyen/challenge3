@@ -1,4 +1,4 @@
-// Assignment Code
+// Assignment Code (get item in html by id)
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -12,3 +12,12 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+var passwordLength = [8, 12, 16];
+// Ask user for their choice
+var passwordLength = function() {
+  var userChoice = window.prompt("Enter your password length (or number of characters) 8, 12 or 16");
+  if (!userChoice) {
+    return;
+  }
+}
