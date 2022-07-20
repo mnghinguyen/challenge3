@@ -6,6 +6,7 @@ var generateBtn = document.querySelector("#generate");
 // password length
 var passwordLength = [8, 12, 16];
 var characters = 'abcdefghijklmnopqrstuvwxyz0123456789@#$';
+var password = "";
 
 // Write password to the #password input
 function writePassword() {
