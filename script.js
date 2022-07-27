@@ -45,7 +45,7 @@ function generatePassword(length, lower, upper, number, symbol) {
 
   for(i = 0; i < length; i += typesCount) {
     typesArray.forEach(type => {
-      var functionName = Object.keys(type)[0];
+      const functionName = Object.keys(type)[0];
       generatedPassword += randomFunction[functionName];
     });
   }
