@@ -40,6 +40,16 @@ function generatePassword(lower, upper, number, symbol, length) {
   );
   console.log("typesArray ", typesArray);
   //check if all bozes are selected
+  if(typesCount === 0) {
+    return '';
+  }
+
+  for(let i = 0; i <length; i += typesCount) {
+    typesArray.forEach(type => {
+      const functionName = Object.keys(type) [0];
+      generatePassword += randomFunction[functionName]();
+    })
+  }
 }
 
 // Generator functions
