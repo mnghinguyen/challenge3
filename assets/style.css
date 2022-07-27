@@ -96,6 +96,29 @@ button[disabled] {
 .float-right {
   float: right;
 }
+.checkbox {
+  margin: 20px;
+}
+#length {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  display: block;
+  width: 100%;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 32px;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #c0c7cf;
+  border-radius: 6px;
+  resize: none;
+  overflow: hidden;
+}
 
 #password {
   -webkit-appearance: none;

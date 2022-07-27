@@ -17,11 +17,29 @@
           <h2>Generate a Password</h2>
         </div>
         <div class="card-body">
+          <p>Enter your password length (or number of characters) 8, 12 or 16</p>
           <input
             id="length"
             placeholder="Number of characters"
             aria-label="Length of Passwprd"
+            value="number"
           ></input>
+        </div>
+        <div class="checkbox">
+          <label>Include uppercase letters</label> 
+          <input type="checkbox" id="uppercase" checked />
+        </div>
+        <div class="checkbox">
+          <label>Include lowercase letters</label> 
+          <input type="checkbox" id="lowercase" checked />
+        </div>
+        <div class="checkbox">
+          <label>Include numbers</label> 
+          <input type="checkbox" id="number" checked />
+        </div>
+        <div class="checkbox">
+          <label>Include symbols</label> 
+          <input type="checkbox" id="symbol" checked />
         </div>
         <div class="card-body">
           <textarea

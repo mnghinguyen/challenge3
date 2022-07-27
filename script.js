@@ -3,8 +3,6 @@ const resultsEl = document.getElementById("password");
 const generateEl = document.getElementById("generate");
 const lengthEl = document.getElementById("length");
 
-console.log(typeof lengthEl);
-
 const randomFunction = {
   lower: getRandomLower,
   upper: getRandomUpper,
@@ -12,6 +10,11 @@ const randomFunction = {
   symbol: getRandomSymbol
 };
 
+generateEl.addEventListener("click", () => {
+  const length = +lengthEl.value;
+  const hasLower = lowercaseEl.checked;
+  
+})
 
 
 // Generator functions
