@@ -1,5 +1,5 @@
 // DOM Elements
-var resultEl = document.getElementById("password");
+var passwordEl = document.getElementById("password");
 var generateEl = document.getElementById("generate");
 var lengthEl = document.getElementById("length");
 var lowercaseEl = document.getElementById("lowercase");
@@ -21,20 +21,20 @@ generateEl.addEventListener("click", () => {
   const hasNumber = numberEl.checked;
   const hasSymbol = symbolEl.checked;
 
-  resultEl.innerText = generatePassword(
+  passwordEl.innerText = generatePassword(
+    length,
     hasLower, 
     hasNumber, 
     hasSymbol, 
-    hasUpper, 
-    length)
+    hasUpper)
   ;
 });
 
 // Generate Password Function
-function generatePassword(lower, upper, number, symbol, length) {
+function generatePassword(length, lower, upper, number, symbol) {
   let generatedPassword = "";
-	const typesCount = lower + upper + number + symbol;
-  const typesArray = [{lower}, {upper}, {number}, {symbol}, {length}].filter
+	var typesCount = lower + upper + number + symbol;
+  var typesArray = [length, lower, upper, number, symbol].filter
   (
     item => Object.values(item)[0]
   );
@@ -45,28 +45,27 @@ function generatePassword(lower, upper, number, symbol, length) {
 
   for(i = 0; i < length; i += typesCount) {
     typesArray.forEach(type => {
-      const functionName = Object.keys(type)[0];
+      var functionName = Object.keys(type)[0];
       generatedPassword += randomFunction[functionName];
     });
   }
-console.log(typeof generatedPassword);
-}
+};
 
 // Generator functions
 // String.fromCharCode to get lowercase characters from browser from character 97
 function getRandomLower() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
+};
 // String.fromCharCode to get uppercase characters from browser from character 65
 function getRandomUpper() {
   return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
+};
 // String.fromCharCode to get number from browser from character 48
 function getRandomNumber() {
   return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
+};
 // String.fromCharCode to get symbols from a defined string
 function getRandomSymbol() {
   const symbols = '!@#$%^&*(){}[]+<>?/,.';
   return symbols [Math.floor(Math.random() * symbols.length)];
-}
+};
