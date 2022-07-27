@@ -26,7 +26,8 @@ generateEl.addEventListener("click", () => {
     hasNumber, 
     hasSymbol, 
     hasUpper, 
-    length);
+    length)
+  ;
 });
 
 // Generate Password Function
@@ -39,16 +40,16 @@ function generatePassword(lower, upper, number, symbol, length) {
   );
   //check if all bozes are selected
   if(typesCount === 0) {
-    return;
+    return "";
   }
 
-  for(let i = 0; i <length; i += typesCount) {
+  for(i = 0; i < length; i += typesCount) {
     typesArray.forEach(type => {
       const functionName = Object.keys(type)[0];
-      generatedPassword += randomFunction[functionName]();
+      generatedPassword += randomFunction[functionName];
     });
   }
-console.log(generatedPassword);
+console.log(typeof generatedPassword);
 }
 
 // Generator functions
