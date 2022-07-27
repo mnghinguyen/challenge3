@@ -31,25 +31,24 @@ generateEl.addEventListener("click", () => {
 
 // Generate Password Function
 function generatePassword(lower, upper, number, symbol, length) {
-  let generatedPassword = '';
+  let generatedPassword = "";
 	const typesCount = lower + upper + number + symbol;
-  console.log("typesCount ", typesCount);
   const typesArray = [{lower}, {upper}, {number}, {symbol}, {length}].filter
   (
-    item => Object.values(item) [0]
+    item => Object.values(item)[0]
   );
-  console.log("typesArray ", typesArray);
   //check if all bozes are selected
   if(typesCount === 0) {
-    return '';
+    return;
   }
 
   for(let i = 0; i <length; i += typesCount) {
     typesArray.forEach(type => {
-      const functionName = Object.keys(type) [0];
-      generatePassword += randomFunction[functionName]();
-    })
+      const functionName = Object.keys(type)[0];
+      generatedPassword += randomFunction[functionName]();
+    });
   }
+console.log(generatedPassword);
 }
 
 // Generator functions
