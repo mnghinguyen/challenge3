@@ -1,7 +1,11 @@
 // DOM Elements
-const resultsEl = document.getElementById("password");
+const resultEl = document.getElementById("password");
 const generateEl = document.getElementById("generate");
 const lengthEl = document.getElementById("length");
+const lowercaseEl = document.getElementById("lowercase");
+const uppercaseEl = document.getElementById("uppercase");
+const numberEl = document.getElementById("number");
+const symbolEl = document.getElementById("symbol");
 
 const randomFunction = {
   lower: getRandomLower,
@@ -13,9 +17,30 @@ const randomFunction = {
 generateEl.addEventListener("click", () => {
   const length = +lengthEl.value;
   const hasLower = lowercaseEl.checked;
-  
-})
+  const hasUpper = uppercaseEl.checked;
+  const hasNumber = numberEl.checked;
+  const hasSymbol = symbolEl.checked;
 
+  resultEl.innerText = generatePassword(
+    hasLower, 
+    hasNumber, 
+    hasSymbol, 
+    hasUpper, 
+    length);
+});
+
+// Generate Password Function
+function generatePassword(lower, upper, number, symbol, length) {
+  let generatedPassword = '';
+	const typesCount = lower + upper + number + symbol;
+  console.log("typesCount ", typesCount);
+  const typesArray = [{lower}, {upper}, {number}, {symbol}, {length}].filter
+  (
+    item => Object.values(item) [0]
+  );
+  console.log("typesArray ", typesArray);
+  //check if all bozes are selected
+}
 
 // Generator functions
 // String.fromCharCode to get lowercase characters from browser from character 97
@@ -35,7 +60,3 @@ function getRandomSymbol() {
   const symbols = '!@#$%^&*(){}[]+<>?/,.';
   return symbols [Math.floor(Math.random() * symbols.length)];
 }
-console.log(getRandomLower());
-console.log(getRandomUpper());
-console.log(getRandomNumber());
-console.log(getRandomSymbol());
