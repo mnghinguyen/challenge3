@@ -1,11 +1,11 @@
 // DOM Elements
-const resultEl = document.getElementById("password");
-const generateEl = document.getElementById("generate");
-const lengthEl = document.getElementById("length");
-const lowercaseEl = document.getElementById("lowercase");
-const uppercaseEl = document.getElementById("uppercase");
-const numberEl = document.getElementById("number");
-const symbolEl = document.getElementById("symbol");
+var resultEl = document.getElementById("password");
+var generateEl = document.getElementById("generate");
+var lengthEl = document.getElementById("length");
+var lowercaseEl = document.getElementById("lowercase");
+var uppercaseEl = document.getElementById("uppercase");
+var numberEl = document.getElementById("number");
+var symbolEl = document.getElementById("symbol");
 
 const randomFunction = {
   lower: getRandomLower,
